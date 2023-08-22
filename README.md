@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <a name="readme-top"></a>
 <div align="center">
     <!-- CONTRIBUTORS -->
@@ -37,3 +38,7 @@
     ·
     <a href="https://github.com/ElCapitanSponge/electron-playground/issues/new">Request Feature</a>
 </div>
+=======
+# Electron-Playground-Testing
+Testing area for Lymlives electron playground
+>>>>>>> 9504889ec949aaf7cbb22176b71535a9f4ac9f5c
