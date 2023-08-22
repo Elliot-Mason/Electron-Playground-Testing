@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
     <link rel="stylesheet" href="./about.page.css">
 </head>
+
 <body>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error cupiditate distinctio unde voluptatibus temporibus? Sit est beatae hic, eum iure eveniet nulla facilis dignissimos quod dicta delectus, labore saepe suscipit.
-    </p>
-    <p>
-        Obcaecati ea ducimus sapiente porro vero earum temporibus, molestias voluptatum quam animi voluptas commodi dolores exercitationem, ab odit neque veniam similique? Quae enim suscipit nihil? Culpa dolorum at enim quo.
-    </p>
-    <p>
-        Repellat similique error animi ipsam explicabo praesentium, placeat eos laudantium rerum dolorum nobis qui, reprehenderit laborum, quo sint. Ex facilis autem sequi eaque beatae, quis inventore porro dolores veritatis itaque?
-    </p>
+    <script>
+        fetch('data.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+        function appendData(data) {
+            var mainContainer = document.getElementById("myData");
+            for (var i = 0; i < data.length; i++) {
+                var div = document.createElement("div");
+                div.innerText = 'Advert ID: ' + data[i].data[0].adverts_id;
+                div.innerText += '\nAdvert Name: ' + data[i].data[0].adverts_name;
+                div.innerText += '\nAdvert Created: ' + data[i].data[0].adverts_created;
+                mainContainer.appendChild(div);
+            }
+        }
+    </script>
+    <div id="myData"></div>
 </body>
+
 </html>
